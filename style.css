@@ -1,0 +1,26 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, sans-serif; background: #0a0a0a; color: #eee; max-width: 700px; margin: 0 auto; padding: 20px; padding-top: env(safe-area-inset-top, 20px); padding-bottom: 40px; }
+header { padding: 16px 0; border-bottom: 1px solid #222; margin-bottom: 16px; }
+.header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+h1 { font-size: 22px; color: #fff; letter-spacing: 0.02em; }
+.reload-btn { padding: 6px 10px; border: 1px solid #333; border-radius: 8px; background: #1a1a1a; color: #aaa; cursor: pointer; display: flex; align-items: center; }
+.reload-btn:active { background: #222; }
+.search-bar { position: relative; }
+.search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #555; }
+.search-bar input { width: 100%; padding: 10px 10px 10px 36px; border: 1px solid #333; border-radius: 8px; background: #111; color: #fff; font-size: 14px; outline: none; }
+.search-bar input:focus { border-color: #555; }
+.search-bar input::placeholder { color: #444; }
+.date-nav { display: flex; gap: 8px; margin-bottom: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
+.date-nav::-webkit-scrollbar { display: none; }
+.date-btn { padding: 6px 14px; border: 1px solid #333; border-radius: 6px; background: none; color: #888; font-size: 12px; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+.date-btn:active { background: #222; }
+.date-btn.active { color: #fff; border-color: #fff; }
+.card { padding: 14px; border: 1px solid #222; border-radius: 10px; background: #111; margin-bottom: 8px; cursor: pointer; }
+.card:active { background: #1a1a1a; }
+.card-source { font-size: 11px; color: #555; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+.card-title { font-size: 14px; color: #fff; font-weight: 600; margin-bottom: 6px; line-height: 1.4; }
+.card-summary { font-size: 13px; color: #aaa; line-height: 1.6; }
+.card-highlights { font-size: 12px; color: #777; margin-top: 8px; padding-left: 16px; }
+.card-highlights li { margin-bottom: 3px; line-height: 1.5; }
+.card-category { display: inline-block; font-size: 10px; color: #666; border: 1px solid #333; border-radius: 4px; padding: 2px 6px; margin-top: 8px; }
+.empty { text-align: center; color: #555; font-size: 13px; padding: 40px 0; }
