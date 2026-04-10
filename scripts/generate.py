@@ -30,11 +30,15 @@ GITHUB_REPOS = [
 RSS_FEEDS = [
     ("Simon Willison", "https://simonwillison.net/atom/everything/"),
     ("GitHub Blog", "https://github.blog/feed/"),
+    ("One Useful Thing", "https://www.oneusefulthing.org/feed"),
+    ("MIT Tech Review AI", "https://www.technologyreview.com/topic/artificial-intelligence/feed"),
 ]
 
 HN_KEYWORDS = ["AI", "LLM", "Claude", "GPT", "dev tool", "IDE", "CLI", "SDK",
                "release", "open source", "Anthropic", "OpenAI", "Cursor", "Copilot",
-               "Rust", "Python", "TypeScript", "Deno", "Bun"]
+               "Rust", "Python", "TypeScript", "Deno", "Bun",
+               "cognitive", "psychology", "learning", "prompt", "workflow",
+               "productivity", "tips", "tutorial"]
 
 
 def fetch_json(url, headers=None):
