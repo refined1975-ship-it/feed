@@ -30,14 +30,28 @@ fetch('data/updates/index.json')
 
 // ===================== Date Navigation =====================
 
+function formatDate(dateStr) {
+  const d = new Date(dateStr + 'T00:00:00');
+  const dow = ['日','月','火','水','木','金','土'][d.getDay()];
+  return (d.getMonth() + 1) + '月' + d.getDate() + '日(' + dow + ')';
+}
+
 function renderDateNav(dates) {
   const nav = document.getElementById('dateNav');
   nav.innerHTML = '';
+  if (dates.length === 1) {
+    nav.className = 'date-nav single';
+    const span = document.createElement('span');
+    span.className = 'date-label';
+    span.textContent = formatDate(dates[0]);
+    nav.appendChild(span);
+    return;
+  }
+  nav.className = 'date-nav';
   dates.forEach(date => {
     const btn = document.createElement('button');
     btn.className = 'date-btn';
-    const d = new Date(date + 'T00:00:00');
-    btn.textContent = (d.getMonth() + 1) + '/' + d.getDate();
+    btn.textContent = formatDate(date);
     btn.dataset.date = date;
     btn.addEventListener('click', () => loadDay(date));
     nav.appendChild(btn);

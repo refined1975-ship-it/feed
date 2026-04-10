@@ -12,6 +12,8 @@ h1 { font-size: 22px; color: #fff; letter-spacing: 0.02em; }
 .search-bar input::placeholder { color: #444; }
 .date-nav { display: flex; gap: 8px; margin-bottom: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
 .date-nav::-webkit-scrollbar { display: none; }
+.date-nav.single { margin-bottom: 12px; }
+.date-label { font-size: 14px; color: #888; font-weight: 500; }
 .date-btn { padding: 6px 14px; border: 1px solid #333; border-radius: 6px; background: none; color: #888; font-size: 12px; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
 .date-btn:active { background: #222; }
 .date-btn.active { color: #fff; border-color: #fff; }
