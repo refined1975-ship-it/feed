@@ -1,106 +1,126 @@
 {
   "date": "2026-04-10",
-  "generated_at": "2026-04-10T09:50:00Z",
+  "generated_at": "2026-04-10T11:57:19Z",
   "items": [
     {
-      "title": "Claude Codeにセキュリティ修正とVertex AIセットアップウィザード追加",
+      "title": "AIエージェント時代の「どのAIを使うべきか」ガイド",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the",
+      "summary": "Ethan Mollickが、AI選びは「チャットボットを選ぶ」時代から「モデル・アプリ・ハーネスの3層を理解する」時代に移行したと解説。同じモデルでもハーネス(自律実行の仕組み)が異なれば結果が大きく変わる。初心者はChatGPT/Claude/Geminiのどれかに月$20払って上位モデルを選ぶこと、経験者はNotebookLMやClaude Codeなど専門ツールを実際の仕事で試すことを推奨。",
+      "highlights": ["モデル・アプリ・ハーネスの3層で考える", "同じモデルでもハーネスで結果が変わる", "上位モデルを明示的に選ぶのが重要"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "マネジメント力がAI活用の最強スキルになる理由",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/management-as-ai-superpower",
+      "summary": "AIエージェントを使いこなすカギは技術力ではなく「委任力」だとMollickが主張。PRD(製品要件書)や軍事命令書のような既存の委任フレームワークが、そのままAIへの指示として有効に機能する。自分の専門分野で「良いアウトプットとは何か」を知っていることが、AIの出力を正しく評価し修正する力になる。AIへの反復指示はコストが安いので、複数バージョンを生成させて選ぶ戦略が有効。",
+      "highlights": ["委任力 > 技術力", "PRDや設計書がそのままプロンプトになる", "反復はコストが安い — 複数案を出させて選ぶ"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "AIの真のボトルネックは「インターフェース」にある",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/claude-dispatch-and-the-power-of",
+      "summary": "AIの能力不足ではなくインターフェースの貧弱さが生産性向上を妨げているという議論。汎用チャットボットの「テキストの壁」は認知的負荷が高く、経験の浅いユーザーほど苦戦する。Claude CodeのようなUI特化型ツールや、WhatsApp/Slackでアクセスするアプローチが有効。将来はAIがユーザーに合わせたUIをその場で生成する方向に進むと予測。",
+      "highlights": ["チャットボットUIが最大のボトルネック", "専用ツール(Claude Code等)で劇的に使いやすくなる", "将来はAIがUI自体を動的生成"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "Mustafa Suleyman: AI開発は壁にぶつからない — その根拠",
+      "source": "rss",
+      "repo": "",
+      "feed": "MIT Tech Review AI",
+      "url": "https://www.technologyreview.com/2026/04/08/1135398/mustafa-suleyman-ai-future/",
+      "summary": "Microsoft AI CEOのSuleymanが「人間は線形思考に慣れているが、AIの進歩は指数関数的」と主張。コンピュート・データ・アルゴリズムの3要素すべてが加速し続けており、「スケーリングの壁」論は過去のパターンを線形に延長する誤りだと反論。AI開発の減速を予測する声に対する楽観的な見解。",
+      "highlights": ["線形思考 vs 指数関数的進歩の認知ギャップ", "コンピュート・データ・アルゴリズムの3軸が同時加速"],
+      "category": "cognitive"
+    },
+    {
+      "title": "AIと雇用の議論で唯一役に立つデータとは",
+      "source": "rss",
+      "repo": "",
+      "feed": "MIT Tech Review AI",
+      "url": "https://www.technologyreview.com/2026/04/06/1135187/the-one-piece-of-data-that-could-actually-shed-light-on-your-job-and-ai/",
+      "summary": "シリコンバレーでは「AIによる雇用崩壊」が既定路線のように語られるが、実際のデータは不足している。MIT Tech Reviewが、AIの雇用への影響を測る上で本当に意味のある指標は何かを考察。Anthropicの研究者も「社会的影響の予測は困難」と認めており、センセーショナルな予測より地道なデータ収集が必要だと指摘。",
+      "highlights": ["AI雇用崩壊論 vs 実データの不足", "意味のある指標の見極めが重要"],
+      "category": "cognitive"
+    },
+    {
+      "title": "Claude Code v2.1.97-v2.1.100 — セキュリティ修正とVertex AI対応",
       "source": "github-release",
       "repo": "anthropics/claude-code",
       "feed": "",
       "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.98",
-      "summary": "v2.1.97-v2.1.98で複数のセキュリティ修正が入った。Bashツールのパーミッションチェックをバックスラッシュや複合コマンドで迂回できる脆弱性を修正。MCP接続で1時間50MBのメモリリークも修正済み。新機能としてGoogle Vertex AIの対話式セットアップとフォーカスビュー(Ctrl+O)が追加。",
-      "highlights": ["Bashパーミッションバイパス脆弱性の修正", "MCP HTTP/SSE接続のメモリリーク修正", "Vertex AI対話式セットアップウィザード", "フォーカスビュー切替(Ctrl+O)"],
+      "summary": "重要なセキュリティ修正を含むアップデート。Bashツールでバックスラッシュや複合コマンドを使うとパーミッションチェックを迂回できる脆弱性を修正。MCP接続で1時間あたり約50MBのメモリリークも解消。新機能としてGoogle Vertex AIの対話式セットアップウィザード、フォーカスビュー(Ctrl+O)、Monitorツールが追加。",
+      "highlights": ["Bashパーミッションバイパス脆弱性の修正", "MCP接続のメモリリーク修正(50MB/h)", "Vertex AIセットアップウィザード追加", "フォーカスビュー切替(Ctrl+O)"],
       "category": "ai-tools"
     },
     {
-      "title": "Anthropic SDKにManaged Agents(マネージドエージェント)サポート追加",
-      "source": "github-release",
-      "repo": "anthropics/anthropic-sdk-python",
-      "feed": "",
-      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.92.0",
-      "summary": "Python/TypeScript両方のAnthropic SDKにClaude Managed Agentsのサポートが追加された。AnthropicがホストするエージェントをAPI経由で管理・実行できる仕組み。また新たにbeta advisor toolも追加。",
-      "highlights": ["Managed Agents API対応", "Python v0.92-0.93 / TypeScript v0.86-0.87"],
-      "category": "ai-tools"
-    },
-    {
-      "title": "MetaがMuse Sparkを発表 — Llama 4以来初の新モデル",
-      "source": "rss",
-      "repo": "",
-      "feed": "Simon Willison",
-      "url": "https://simonwillison.net/2026/Apr/8/muse-spark/",
-      "summary": "MetaがLlama 4から約1年ぶりに新モデルMuse Sparkを発表。今回はオープンウェイトではなくホスト型で、APIは一部ユーザーにプライベートプレビュー中。ベンチマークではOpus 4.6やGemini 3.1 Proと同等だが、Terminal-Bench 2.0では後れを取る。meta.aiで試用可能。",
-      "highlights": ["ホスト型モデル（オープンウェイトではない）", "Opus 4.6/Gemini 3.1 Proと競合するベンチマーク"],
-      "category": "ai-tools"
-    },
-    {
-      "title": "GLM-5.1 — 754Bパラメータ、MIT License、長期タスク特化の巨大モデル",
-      "source": "rss",
-      "repo": "",
-      "feed": "Simon Willison",
-      "url": "https://simonwillison.net/2026/Apr/7/glm-51/",
-      "summary": "中国のZ.aiが754Bパラメータ(1.51TB)のGLM-5.1をMITライセンスで公開。長期タスク(Long-Horizon Tasks)に特化した設計で、Hugging FaceとOpenRouterで利用可能。未指示でもHTMLページにSVGを埋め込んでインタラクティブな出力を生成する独自の挙動が報告されている。",
-      "highlights": ["754Bパラメータ、MIT License", "Long-Horizon Tasks特化", "OpenRouterで利用可能"],
-      "category": "research"
-    },
-    {
-      "title": "Next.js v16.2.3 — セキュリティ脆弱性(CVE-2026-23869)の修正",
-      "source": "github-release",
-      "repo": "vercel/next.js",
-      "feed": "",
-      "url": "https://github.com/vercel/next.js/releases/tag/v16.2.3",
-      "summary": "セキュリティ脆弱性CVE-2026-23869のバックポート修正リリース。styled-jsxのレースコンディションによるスタイル消失、ISRの再検証エラー報告、HMR破壊などのバグも修正。canary版ではWASMエンジンがWasmerからWasmtimeに切り替わった。",
-      "highlights": ["CVE-2026-23869のセキュリティ修正", "styled-jsxレースコンディション修正", "WASMエンジンをWasmtimeに変更(canary)"],
-      "category": "web-dev"
-    },
-    {
-      "title": "Deno v2.7.12 — Node.jsネイティブ互換性の大幅強化",
-      "source": "github-release",
-      "repo": "denoland/deno",
-      "feed": "",
-      "url": "https://github.com/denoland/deno/releases/tag/v2.7.12",
-      "summary": "Node.js互換レイヤーを大幅に強化。ネイティブのuv_pipe_t実装、llhttpベースのHTTPParser、TLSWrapのRust実装など、Nodeの低レイヤーAPIをRustでネイティブ実装する方向に進んでいる。ファイルディスクリプタ周りの修正も多数。",
-      "highlights": ["llhttpベースHTTPParserのネイティブ実装", "TLSWrapのRust cppgc実装", "Node.js fd(ファイルディスクリプタ)APIの互換性向上"],
-      "category": "runtime"
-    },
-    {
-      "title": "GitButlerが$17M調達 — 「Gitの次」を目指す",
-      "source": "hackernews",
-      "repo": "",
-      "feed": "",
-      "url": "https://blog.gitbutler.com/series-a",
-      "summary": "バージョン管理ツールGitButlerがシリーズAで$17M(約25億円)を調達。Gitを置き換えるのではなく、Gitの上に新しいワークフローを構築するアプローチ。HNで255件のコメントと活発な議論。",
-      "highlights": ["シリーズA $17M調達", "HNで255コメントの注目度"],
-      "category": "ai-tools"
-    },
-    {
-      "title": "ETH Zurichが17,000量子ビット配列で99.91%忠実度を達成",
-      "source": "hackernews",
-      "repo": "",
-      "feed": "",
-      "url": "https://ethz.ch/en/news-and-events/eth-news/news/2026/04/a-new-trick-brings-stability-to-quantum-operations.html",
-      "summary": "ETH Zurichが量子コンピューティングで画期的な成果を発表。17,000量子ビットの配列で99.91%の忠実度(fidelity)を実現。量子演算の安定性を高める新しい手法により、実用的な量子コンピュータへの道が近づいた。",
-      "highlights": ["17,000量子ビット配列", "99.91%の演算忠実度"],
-      "category": "research"
-    },
-    {
-      "title": "GitHub Copilot CLIが複数モデルで「セカンドオピニオン」機能を追加",
+      "title": "GitHub Copilot CLIに「Rubber Duck」 — 別モデルでセカンドオピニオン",
       "source": "rss",
       "repo": "",
       "feed": "GitHub Blog",
       "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/",
-      "summary": "GitHub Copilot CLIに「Rubber Duck」機能が追加。メインのモデルとは別のモデルファミリーを使って、提案に対する別の視点を提供する。1つのモデルの回答に依存しない、より信頼性の高いコーディング支援を目指す。",
-      "highlights": ["異なるモデルファミリーによるセカンドオピニオン", "Rubber Duck機能"],
+      "summary": "Copilot CLIに異なるモデルファミリーで提案をレビューする「Rubber Duck」機能が追加。Claudeで生成してGPT-5.4で検証するなど、計画・実装・テストの各段階で自動的にチェックが入る。Sonnet 4.6+Rubber DuckでOpus 4.6単体との性能差の74.7%を埋められるという結果。複雑なリファクタリングやテスト作成で特に有効。",
+      "highlights": ["異なるモデルファミリーによる自動レビュー", "Sonnet+Rubber DuckでOpus単体の74.7%の差を解消", "/experimentalで利用可能"],
       "category": "ai-tools"
     },
     {
-      "title": "科学者が架空の病気を作ったらAIが「実在する」と回答した",
+      "title": "Next.js v16.2.3 — CVE-2026-23869セキュリティ修正",
+      "source": "github-release",
+      "repo": "vercel/next.js",
+      "feed": "",
+      "url": "https://github.com/vercel/next.js/releases/tag/v16.2.3",
+      "summary": "セキュリティ脆弱性CVE-2026-23869を修正するバックポートリリース。styled-jsxの並行レンダリングでスタイルが消えるレースコンディション、manifest.tsがHMRを壊す問題なども修正。Next.jsユーザーは早めのアップデートを推奨。",
+      "highlights": ["CVE-2026-23869のセキュリティ修正", "styled-jsxレースコンディション修正"],
+      "category": "web-dev"
+    },
+    {
+      "title": "Instant 1.0 — AIが書いたアプリのためのバックエンド基盤",
       "source": "hackernews",
       "repo": "",
       "feed": "",
-      "url": "https://www.nature.com/articles/d41586-026-01100-y",
-      "summary": "Nature掲載の研究。科学者が架空の病気を作成してAIモデルに質問したところ、自信を持って「実在する」と詳細な説明を返した。LLMのハルシネーション(もっともらしい嘘)問題が医療分野で特に危険であることを示す実験。",
-      "highlights": ["Nature掲載のAIハルシネーション研究", "医療分野でのLLMリスク"],
-      "category": "research"
+      "url": "https://www.instantdb.com/essays/architecture",
+      "summary": "AIでコードを書く時代に合わせたバックエンド基盤がv1.0に到達。PostgresをトリプルストアとしてEntity-Attribute-Value形式で使い、リアルタイム同期・オフライン対応・マルチプレイヤー機能を標準搭載。テーブル設計不要で即座にアプリを作れるため、AIコード生成との相性が良い。HNで163ポイントの注目を集めた。",
+      "highlights": ["Postgresベースのトリプルストア設計", "リアルタイム同期とオフラインをゼロ設定で提供", "AIコード生成時代に最適化"],
+      "category": "library"
+    },
+    {
+      "title": "GitHubのdiff表示を10倍速くした方法",
+      "source": "rss",
+      "repo": "",
+      "feed": "GitHub Blog",
+      "url": "https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/",
+      "summary": "大きなPRを開くとJSヒープが1GBを超え、DOMノードが40万個以上になる問題をGitHubエンジニアが解決。diff1行あたりのReactコンポーネントを8-13個から2-3個に削減し、巨大PRにはTanStack Virtualで仮想化を適用。結果、JSヒープとDOMノードを10分の1に削減。「シンプルにすることが最大のパフォーマンス改善」という好例。",
+      "highlights": ["diff行のReactコンポーネントを8-13個から2-3個に削減", "TanStack Virtualで仮想スクロール", "ヒープ/DOMノード10分の1に"],
+      "category": "web-dev"
+    },
+    {
+      "title": "オープンソースサプライチェーン攻撃の最新手口と防御策",
+      "source": "rss",
+      "repo": "",
+      "feed": "GitHub Blog",
+      "url": "https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/",
+      "summary": "最近のOSS攻撃はGitHub Actionsのシークレット窃取に集中している。盗んだAPIキーで悪意あるパッケージを公開し、さらに別のプロジェクトを侵害する連鎖攻撃が増加。対策としてActionsをコミットSHAでピン留め、pull_request_targetイベントの回避、OpenID Connect トークンの利用を推奨。今日からできる具体的な防御ステップが整理されている。",
+      "highlights": ["GitHub Actionsシークレット窃取が主な攻撃手法", "ActionsのコミットSHAピン留めが基本対策", "OpenID Connectトークンでハードコード秘密鍵を排除"],
+      "category": "web-dev"
+    },
+    {
+      "title": "Anthropic SDKにManaged AgentsとAdvisor Toolが追加",
+      "source": "github-release",
+      "repo": "anthropics/anthropic-sdk-python",
+      "feed": "",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.92.0",
+      "summary": "Python SDK v0.92-v0.93、TypeScript SDK v0.86-v0.87でClaude Managed Agentsのサポートが追加された。Anthropicがホストするエージェントをapi経由で管理・実行できる仕組み。v0.93ではbeta advisor tool(アドバイザーツール)も追加され、エージェント構築の選択肢が広がった。",
+      "highlights": ["Managed Agents — Anthropicホスト型エージェント管理API", "Beta Advisor Tool追加", "Python/TypeScript両SDK同時対応"],
+      "category": "ai-tools"
     }
   ]
 }
