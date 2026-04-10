@@ -1,0 +1,106 @@
+{
+  "date": "2026-04-10",
+  "generated_at": "2026-04-10T09:50:00Z",
+  "items": [
+    {
+      "title": "Claude Codeにセキュリティ修正とVertex AIセットアップウィザード追加",
+      "source": "github-release",
+      "repo": "anthropics/claude-code",
+      "feed": "",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.98",
+      "summary": "v2.1.97-v2.1.98で複数のセキュリティ修正が入った。Bashツールのパーミッションチェックをバックスラッシュや複合コマンドで迂回できる脆弱性を修正。MCP接続で1時間50MBのメモリリークも修正済み。新機能としてGoogle Vertex AIの対話式セットアップとフォーカスビュー(Ctrl+O)が追加。",
+      "highlights": ["Bashパーミッションバイパス脆弱性の修正", "MCP HTTP/SSE接続のメモリリーク修正", "Vertex AI対話式セットアップウィザード", "フォーカスビュー切替(Ctrl+O)"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "Anthropic SDKにManaged Agents(マネージドエージェント)サポート追加",
+      "source": "github-release",
+      "repo": "anthropics/anthropic-sdk-python",
+      "feed": "",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases/tag/v0.92.0",
+      "summary": "Python/TypeScript両方のAnthropic SDKにClaude Managed Agentsのサポートが追加された。AnthropicがホストするエージェントをAPI経由で管理・実行できる仕組み。また新たにbeta advisor toolも追加。",
+      "highlights": ["Managed Agents API対応", "Python v0.92-0.93 / TypeScript v0.86-0.87"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "MetaがMuse Sparkを発表 — Llama 4以来初の新モデル",
+      "source": "rss",
+      "repo": "",
+      "feed": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Apr/8/muse-spark/",
+      "summary": "MetaがLlama 4から約1年ぶりに新モデルMuse Sparkを発表。今回はオープンウェイトではなくホスト型で、APIは一部ユーザーにプライベートプレビュー中。ベンチマークではOpus 4.6やGemini 3.1 Proと同等だが、Terminal-Bench 2.0では後れを取る。meta.aiで試用可能。",
+      "highlights": ["ホスト型モデル（オープンウェイトではない）", "Opus 4.6/Gemini 3.1 Proと競合するベンチマーク"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "GLM-5.1 — 754Bパラメータ、MIT License、長期タスク特化の巨大モデル",
+      "source": "rss",
+      "repo": "",
+      "feed": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Apr/7/glm-51/",
+      "summary": "中国のZ.aiが754Bパラメータ(1.51TB)のGLM-5.1をMITライセンスで公開。長期タスク(Long-Horizon Tasks)に特化した設計で、Hugging FaceとOpenRouterで利用可能。未指示でもHTMLページにSVGを埋め込んでインタラクティブな出力を生成する独自の挙動が報告されている。",
+      "highlights": ["754Bパラメータ、MIT License", "Long-Horizon Tasks特化", "OpenRouterで利用可能"],
+      "category": "research"
+    },
+    {
+      "title": "Next.js v16.2.3 — セキュリティ脆弱性(CVE-2026-23869)の修正",
+      "source": "github-release",
+      "repo": "vercel/next.js",
+      "feed": "",
+      "url": "https://github.com/vercel/next.js/releases/tag/v16.2.3",
+      "summary": "セキュリティ脆弱性CVE-2026-23869のバックポート修正リリース。styled-jsxのレースコンディションによるスタイル消失、ISRの再検証エラー報告、HMR破壊などのバグも修正。canary版ではWASMエンジンがWasmerからWasmtimeに切り替わった。",
+      "highlights": ["CVE-2026-23869のセキュリティ修正", "styled-jsxレースコンディション修正", "WASMエンジンをWasmtimeに変更(canary)"],
+      "category": "web-dev"
+    },
+    {
+      "title": "Deno v2.7.12 — Node.jsネイティブ互換性の大幅強化",
+      "source": "github-release",
+      "repo": "denoland/deno",
+      "feed": "",
+      "url": "https://github.com/denoland/deno/releases/tag/v2.7.12",
+      "summary": "Node.js互換レイヤーを大幅に強化。ネイティブのuv_pipe_t実装、llhttpベースのHTTPParser、TLSWrapのRust実装など、Nodeの低レイヤーAPIをRustでネイティブ実装する方向に進んでいる。ファイルディスクリプタ周りの修正も多数。",
+      "highlights": ["llhttpベースHTTPParserのネイティブ実装", "TLSWrapのRust cppgc実装", "Node.js fd(ファイルディスクリプタ)APIの互換性向上"],
+      "category": "runtime"
+    },
+    {
+      "title": "GitButlerが$17M調達 — 「Gitの次」を目指す",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://blog.gitbutler.com/series-a",
+      "summary": "バージョン管理ツールGitButlerがシリーズAで$17M(約25億円)を調達。Gitを置き換えるのではなく、Gitの上に新しいワークフローを構築するアプローチ。HNで255件のコメントと活発な議論。",
+      "highlights": ["シリーズA $17M調達", "HNで255コメントの注目度"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "ETH Zurichが17,000量子ビット配列で99.91%忠実度を達成",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://ethz.ch/en/news-and-events/eth-news/news/2026/04/a-new-trick-brings-stability-to-quantum-operations.html",
+      "summary": "ETH Zurichが量子コンピューティングで画期的な成果を発表。17,000量子ビットの配列で99.91%の忠実度(fidelity)を実現。量子演算の安定性を高める新しい手法により、実用的な量子コンピュータへの道が近づいた。",
+      "highlights": ["17,000量子ビット配列", "99.91%の演算忠実度"],
+      "category": "research"
+    },
+    {
+      "title": "GitHub Copilot CLIが複数モデルで「セカンドオピニオン」機能を追加",
+      "source": "rss",
+      "repo": "",
+      "feed": "GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/",
+      "summary": "GitHub Copilot CLIに「Rubber Duck」機能が追加。メインのモデルとは別のモデルファミリーを使って、提案に対する別の視点を提供する。1つのモデルの回答に依存しない、より信頼性の高いコーディング支援を目指す。",
+      "highlights": ["異なるモデルファミリーによるセカンドオピニオン", "Rubber Duck機能"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "科学者が架空の病気を作ったらAIが「実在する」と回答した",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://www.nature.com/articles/d41586-026-01100-y",
+      "summary": "Nature掲載の研究。科学者が架空の病気を作成してAIモデルに質問したところ、自信を持って「実在する」と詳細な説明を返した。LLMのハルシネーション(もっともらしい嘘)問題が医療分野で特に危険であることを示す実験。",
+      "highlights": ["Nature掲載のAIハルシネーション研究", "医療分野でのLLMリスク"],
+      "category": "research"
+    }
+  ]
+}
