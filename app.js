@@ -12,7 +12,7 @@ function esc(s) {
 
 // ===================== Init =====================
 
-fetch('data/updates/index.json')
+fetch('data/updates/index.json?v=' + Date.now())
   .then(r => r.json())
   .then(idx => {
     feedIndex = idx;
