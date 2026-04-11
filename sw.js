@@ -1,4 +1,4 @@
-const CACHE_NAME = 'feed-v2';
+const CACHE_NAME = 'feed-v3';
 const STATIC = ['/', '/index.html', '/style.css', '/app.js', '/manifest.json'];
 
 self.addEventListener('install', e => {

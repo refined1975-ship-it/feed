@@ -10,7 +10,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 <title>FEED</title>
 </head>
 <body>
@@ -27,10 +27,29 @@
   </div>
 </header>
 
-<div class="date-nav" id="dateNav"></div>
-<div id="cards"></div>
-<div class="empty" id="emptyMsg" style="display:none">記事がありません</div>
+<div class="tabs">
+  <div class="tab active" data-tab="news">ニュース</div>
+  <div class="tab" data-tab="articles">記事</div>
+</div>
 
-<script src="app.js?v=2"></script>
+<div class="tab-content active" id="tab-news">
+  <div class="date-nav" id="dateNav"></div>
+  <div id="cards"></div>
+  <div class="empty" id="emptyMsg" style="display:none">記事がありません</div>
+</div>
+
+<div class="tab-content" id="tab-articles">
+  <div id="articleList"></div>
+  <div class="empty" id="articleEmpty" style="display:none">記事がありません</div>
+</div>
+
+<div class="article-view" id="articleView">
+  <button class="article-back" id="articleBack">
+    <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+  </button>
+  <div id="articleContent"></div>
+</div>
+
+<script src="app.js?v=3"></script>
 </body>
 </html>

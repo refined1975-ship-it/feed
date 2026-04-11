@@ -137,3 +137,101 @@ document.getElementById('searchInput').addEventListener('input', () => {
     }
   }, 200);
 });
+
+// ===================== Tabs =====================
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    if (tab.dataset.tab === 'articles' && !articlesLoaded) loadArticles();
+  });
+});
+
+// ===================== Articles =====================
+
+let articlesLoaded = false;
+let articlesData = [];
+
+function loadArticles() {
+  fetch('data/articles/index.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(idx => {
+      articlesData = idx.articles || [];
+      articlesLoaded = true;
+      renderArticleList();
+    })
+    .catch(() => {
+      document.getElementById('articleEmpty').textContent = 'データを取得できません';
+      document.getElementById('articleEmpty').style.display = '';
+    });
+}
+
+function renderArticleList() {
+  const list = document.getElementById('articleList');
+  const empty = document.getElementById('articleEmpty');
+  list.innerHTML = '';
+
+  if (articlesData.length === 0) {
+    empty.style.display = '';
+    return;
+  }
+  empty.style.display = 'none';
+
+  articlesData.forEach(a => {
+    const div = document.createElement('div');
+    div.className = 'article-item';
+    const d = new Date(a.date + 'T00:00:00');
+    const dateStr = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
+    div.innerHTML = '<div class="article-item-date">' + esc(dateStr) + '</div>'
+      + '<div class="article-item-title">' + esc(a.title) + '</div>'
+      + '<div class="article-item-summary">' + esc(a.summary) + '</div>'
+      + (a.tags && a.tags.length > 0
+        ? '<div class="article-item-tags">' + a.tags.map(t => '<span>' + esc(t) + '</span>').join('') + '</div>'
+        : '');
+    div.addEventListener('click', () => openArticle(a.slug));
+    list.appendChild(div);
+  });
+}
+
+function openArticle(slug) {
+  fetch('data/articles/' + slug + '.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(article => {
+      const view = document.getElementById('articleView');
+      const content = document.getElementById('articleContent');
+      const d = new Date(article.date + 'T00:00:00');
+      const dateStr = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
+
+      content.innerHTML = '<div class="article-body">'
+        + '<h1>' + esc(article.title) + '</h1>'
+        + '<div class="article-meta">' + esc(dateStr)
+        + (article.tags ? ' / ' + article.tags.map(t => esc(t)).join(', ') : '')
+        + '</div>'
+        + renderMarkdown(article.body)
+        + '</div>';
+
+      view.classList.add('active');
+      view.scrollTop = 0;
+    });
+}
+
+document.getElementById('articleBack').addEventListener('click', () => {
+  document.getElementById('articleView').classList.remove('active');
+});
+
+function renderMarkdown(md) {
+  return md
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^> (.+)$/gm, '<blockquote>$1</blockquote>')
+    .replace(/^---$/gm, '<hr>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/g, m => '<ul>' + m + '</ul>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/`(.+?)`/g, '<code>$1</code>')
+    .replace(/^(?!<[hublop]|<hr|<li)(.+)$/gm, '<p>$1</p>')
+    .replace(/<\/blockquote>\n<blockquote>/g, '<br>');
+}
