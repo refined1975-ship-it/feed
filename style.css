@@ -31,6 +31,8 @@ h1 { font-size: 22px; color: #fff; letter-spacing: 0.02em; }
 .tab.active { color: #fff; border-bottom-color: #fff; font-weight: 600; }
 .tab-content { display: none; }
 .tab-content.active { display: block; }
+.paper-line { font-size: 13px; color: #aaa; line-height: 1.6; margin-top: 6px; }
+.paper-line strong { color: #888; }
 .article-item { padding: 14px; border: 1px solid #222; border-radius: 10px; background: #111; margin-bottom: 8px; cursor: pointer; }
 .article-item:active { background: #1a1a1a; }
 .article-item-date { font-size: 11px; color: #555; margin-bottom: 4px; }

@@ -40,6 +40,13 @@ HN_KEYWORDS = ["AI", "LLM", "Claude", "GPT", "dev tool", "IDE", "CLI", "SDK",
                "cognitive", "psychology", "learning", "prompt", "workflow",
                "productivity", "tips", "tutorial"]
 
+ARXIV_FEEDS = [
+    ("cs.AI", "https://rss.arxiv.org/rss/cs.AI"),
+    ("cs.CL", "https://rss.arxiv.org/rss/cs.CL"),
+    ("cs.HC", "https://rss.arxiv.org/rss/cs.HC"),
+    ("q-bio.NC", "https://rss.arxiv.org/rss/q-bio.NC"),
+]
+
 
 def fetch_json(url, headers=None):
     ctx = ssl.create_default_context()
@@ -170,12 +177,51 @@ def fetch_hackernews():
     return items
 
 
+def fetch_arxiv():
+    items = []
+    for category, url in ARXIV_FEEDS:
+        text = fetch_text(url)
+        if not text:
+            continue
+        try:
+            root = ET.fromstring(text)
+        except ET.ParseError:
+            continue
+
+        entries = root.findall(".//item")
+
+        for entry in entries[:10]:
+            title = entry.findtext("title") or ""
+            link = entry.findtext("link") or ""
+            desc = entry.findtext("description") or ""
+            desc = re.sub(r"<[^>]+>", "", desc)
+            if len(desc) > 800:
+                desc = desc[:800] + "..."
+
+            title = re.sub(r"\s+", " ", title).strip()
+
+            items.append({
+                "source": "arxiv",
+                "category": category,
+                "title": title,
+                "url": link.strip(),
+                "body": desc.strip(),
+            })
+    return items
+
+
 def main():
-    raw_items = []
-    raw_items.extend(fetch_github_releases())
-    raw_items.extend(fetch_rss_feeds())
-    raw_items.extend(fetch_hackernews())
-    print(json.dumps(raw_items, ensure_ascii=False, indent=2))
+    mode = sys.argv[1] if len(sys.argv) > 1 else "news"
+
+    if mode == "--papers":
+        papers = fetch_arxiv()
+        print(json.dumps(papers, ensure_ascii=False, indent=2))
+    else:
+        raw_items = []
+        raw_items.extend(fetch_github_releases())
+        raw_items.extend(fetch_rss_feeds())
+        raw_items.extend(fetch_hackernews())
+        print(json.dumps(raw_items, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

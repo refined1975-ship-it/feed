@@ -146,9 +146,110 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
     tab.classList.add('active');
     document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    if (tab.dataset.tab === 'papers' && !papersLoaded) loadPapers();
     if (tab.dataset.tab === 'articles' && !articlesLoaded) loadArticles();
   });
 });
+
+// ===================== Papers =====================
+
+let papersLoaded = false;
+let papersIndex = null;
+let papersData = {};
+let currentPaperDate = null;
+
+function loadPapers() {
+  fetch('data/papers/index.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(idx => {
+      papersIndex = idx;
+      papersLoaded = true;
+      if (!idx.dates || idx.dates.length === 0) {
+        document.getElementById('paperEmpty').style.display = '';
+        return;
+      }
+      renderPaperDateNav(idx.dates);
+      loadPaperDay(idx.dates[0]);
+    })
+    .catch(() => {
+      document.getElementById('paperEmpty').textContent = 'データを取得できません';
+      document.getElementById('paperEmpty').style.display = '';
+    });
+}
+
+function renderPaperDateNav(dates) {
+  const nav = document.getElementById('paperDateNav');
+  nav.innerHTML = '';
+  if (dates.length === 1) {
+    nav.className = 'date-nav single';
+    const span = document.createElement('span');
+    span.className = 'date-label';
+    span.textContent = formatDate(dates[0]);
+    nav.appendChild(span);
+    return;
+  }
+  nav.className = 'date-nav';
+  dates.forEach(date => {
+    const btn = document.createElement('button');
+    btn.className = 'date-btn';
+    btn.textContent = formatDate(date);
+    btn.dataset.date = date;
+    btn.addEventListener('click', () => loadPaperDay(date));
+    nav.appendChild(btn);
+  });
+}
+
+function loadPaperDay(date) {
+  currentPaperDate = date;
+  document.querySelectorAll('#paperDateNav .date-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.date === date);
+  });
+
+  if (papersData[date]) {
+    renderPaperCards(papersData[date].items);
+    return;
+  }
+
+  document.getElementById('paperCards').innerHTML = '';
+  document.getElementById('paperEmpty').textContent = '読み込み中...';
+  document.getElementById('paperEmpty').style.display = '';
+
+  fetch('data/papers/' + date + '.json')
+    .then(r => r.json())
+    .then(data => {
+      papersData[date] = data;
+      renderPaperCards(data.items);
+    })
+    .catch(() => {
+      document.getElementById('paperEmpty').textContent = 'データを取得できません';
+      document.getElementById('paperEmpty').style.display = '';
+    });
+}
+
+function renderPaperCards(items) {
+  const container = document.getElementById('paperCards');
+  const empty = document.getElementById('paperEmpty');
+  container.innerHTML = '';
+
+  if (!items || items.length === 0) {
+    empty.textContent = '論文がありません';
+    empty.style.display = '';
+    return;
+  }
+  empty.style.display = 'none';
+
+  items.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = '<div class="card-source">' + esc(item.category || 'arxiv') + '</div>'
+      + '<div class="card-title">' + esc(item.title) + '</div>'
+      + '<div class="paper-line"><strong>何がわかったか:</strong> ' + esc(item.finding) + '</div>'
+      + '<div class="paper-line"><strong>人間にとって:</strong> ' + esc(item.human_impact) + '</div>'
+      + '<div class="paper-line"><strong>日常のどこに:</strong> ' + esc(item.daily_use) + '</div>';
+    card.addEventListener('click', () => window.open(item.url, '_blank'));
+    container.appendChild(card);
+  });
+}
 
 // ===================== Articles =====================
 

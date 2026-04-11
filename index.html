@@ -10,7 +10,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 <title>FEED</title>
 </head>
 <body>
@@ -29,6 +29,7 @@
 
 <div class="tabs">
   <div class="tab active" data-tab="news">ニュース</div>
+  <div class="tab" data-tab="papers">論文</div>
   <div class="tab" data-tab="articles">記事</div>
 </div>
 
@@ -36,6 +37,12 @@
   <div class="date-nav" id="dateNav"></div>
   <div id="cards"></div>
   <div class="empty" id="emptyMsg" style="display:none">記事がありません</div>
+</div>
+
+<div class="tab-content" id="tab-papers">
+  <div class="date-nav" id="paperDateNav"></div>
+  <div id="paperCards"></div>
+  <div class="empty" id="paperEmpty" style="display:none">論文がありません</div>
 </div>
 
 <div class="tab-content" id="tab-articles">
@@ -50,6 +57,6 @@
   <div id="articleContent"></div>
 </div>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
