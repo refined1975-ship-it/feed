@@ -1,0 +1,96 @@
+{
+  "date": "2026-04-12",
+  "generated_at": "2026-04-12T07:30:00Z",
+  "items": [
+    {
+      "title": "AIエージェントのベンチマークを破壊した研究者が語る「次に来るもの」",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://rdi.berkeley.edu/blog/trustworthy-benchmarks-cont/",
+      "summary": "Berkeley RDIチームがトップAIエージェントベンチマークの脆弱性を体系的に暴露。ベンチマークのスコアが実世界の性能を反映していない問題を指摘し、より信頼できる評価手法を提案。「スコアが上がった＝賢くなった」ではない。",
+      "highlights": ["ベンチマーク≠実力という構造的問題", "HN 146ポイント・41コメント"],
+      "category": "research"
+    },
+    {
+      "title": "「道具がないから使えない」のではない — AIインターフェースの話",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/claude-dispatch-and-the-power-of",
+      "summary": "Ethan Mollick がClaude Dispatchを例に、AIの能力は十分でもインターフェースが追いついていない問題を論じる。AIを「使えない」と感じる原因の多くは、モデル性能ではなくアクセス方法にある。ツールの設計がAI活用の成否を分ける。",
+      "highlights": ["AIの限界はモデルではなくインターフェースにある", "Claude Dispatchの実例分析"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "エージェント時代のAI使い分けガイド",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the",
+      "summary": "もはやチャットボットだけの時代ではない。Ethan Mollickがエージェント時代における各AI製品の使い分けを整理。タスクの種類によって最適なAI・インターフェースが異なることを実用的に解説。",
+      "highlights": ["用途別のAI選択ガイド", "チャットボット以外の選択肢を整理"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "マネジメント能力がAI時代の最強スキルになる",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/management-as-ai-superpower",
+      "summary": "AIエージェントが増えると、それを管理する能力が最も価値を持つ。プロンプトの書き方ではなく、タスクの分解・委任・品質管理といったマネジメントスキルがAI活用の差を生む。人間の管理職スキルがそのままAI活用スキルになる。",
+      "highlights": ["AI活用力≒マネジメント力", "タスク分解と委任が鍵"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "GitHub Copilot CLIに「セカンドオピニオン」機能",
+      "source": "rss",
+      "repo": "",
+      "feed": "GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/",
+      "summary": "Copilot CLIが複数モデルファミリーを組み合わせて別の視点を提供する「Rubber Duck」機能を搭載。1つのモデルの回答に対して別のモデルが検証・補足する仕組み。AIの回答を鵜呑みにしないための構造的アプローチ。",
+      "highlights": ["複数モデルで相互検証", "AIの回答品質を構造で担保"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "SQLite 3.53.0: ALTER TABLEでNOT NULL制約の追加・削除が可能に",
+      "source": "rss",
+      "repo": "",
+      "feed": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Apr/11/sqlite/#atom-everything",
+      "summary": "3.52.0が撤回されたため大量の変更を含む大型リリース。ALTER TABLEでNOT NULL/CHECK制約の追加・削除が可能に。CLIの結果表示も大幅改善。WebAssemblyでのフォーマッタデモも公開。",
+      "highlights": ["ALTER TABLEの制約操作が可能に", "CLIの結果フォーマットが大幅改善"],
+      "category": "web-dev"
+    },
+    {
+      "title": "Bun v1.3.12リリース",
+      "source": "github-release",
+      "repo": "oven-sh/bun",
+      "feed": "",
+      "url": "https://github.com/oven-sh/bun/releases/tag/bun-v1.3.12",
+      "summary": "Bun v1.3.12がリリース。8名のコントリビュータによる改善。詳細はBun公式ブログで公開。安定版の継続的なアップデート。",
+      "highlights": ["安定版の継続アップデート"],
+      "category": "runtime"
+    },
+    {
+      "title": "GitHubのdiff表示を速くした泥臭い最適化の話",
+      "source": "rss",
+      "repo": "",
+      "feed": "GitHub Blog",
+      "url": "https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/",
+      "summary": "GitHub Engineering Blogの技術記事。diff表示のパフォーマンス改善に取り組んだ過程を解説。複雑な最適化ではなく、シンプルさの追求がパフォーマンス向上の鍵だったという実践知。",
+      "highlights": ["パフォーマンスの鍵はシンプルさ", "実際のGitHub開発での知見"],
+      "category": "web-dev"
+    },
+    {
+      "title": "Rustでデッドロックしないミューテックスを型で保証する",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://notes.brooklynzelenka.com/Blog/Surelock",
+      "summary": "Rustの型システムを活用してデッドロックを構造的に不可能にするミューテックスライブラリSurelock。ロックの取得順序を型レベルで強制し、実行時ではなくコンパイル時にデッドロックを防ぐ。HN 148ポイント。",
+      "highlights": ["型レベルでデッドロックを防止", "コンパイル時に問題を検出"],
+      "category": "web-dev"
+    }
+  ]
+}
