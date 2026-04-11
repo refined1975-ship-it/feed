@@ -40,12 +40,7 @@ HN_KEYWORDS = ["AI", "LLM", "Claude", "GPT", "dev tool", "IDE", "CLI", "SDK",
                "cognitive", "psychology", "learning", "prompt", "workflow",
                "productivity", "tips", "tutorial"]
 
-ARXIV_FEEDS = [
-    ("cs.AI", "https://rss.arxiv.org/rss/cs.AI"),
-    ("cs.CL", "https://rss.arxiv.org/rss/cs.CL"),
-    ("cs.HC", "https://rss.arxiv.org/rss/cs.HC"),
-    ("q-bio.NC", "https://rss.arxiv.org/rss/q-bio.NC"),
-]
+ARXIV_CATEGORIES = ["cs.AI", "cs.CL", "cs.HC", "q-bio.NC"]
 
 
 def fetch_json(url, headers=None):
@@ -68,7 +63,7 @@ def fetch_text(url):
     req = urllib.request.Request(url)
     req.add_header("User-Agent", "FEED/1.0")
     try:
-        with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:
+        with urllib.request.urlopen(req, context=ctx, timeout=30) as resp:
             return resp.read().decode("utf-8", errors="replace")
     except Exception as e:
         print(f"WARN: {url}: {e}", file=sys.stderr)
@@ -179,7 +174,11 @@ def fetch_hackernews():
 
 def fetch_arxiv():
     items = []
-    for category, url in ARXIV_FEEDS:
+    seen = set()
+    for cat in ARXIV_CATEGORIES:
+        url = (f"https://export.arxiv.org/api/query?"
+               f"search_query=cat:{cat}&sortBy=submittedDate"
+               f"&sortOrder=descending&max_results=8")
         text = fetch_text(url)
         if not text:
             continue
@@ -188,24 +187,29 @@ def fetch_arxiv():
         except ET.ParseError:
             continue
 
-        entries = root.findall(".//item")
+        ns = {"atom": "http://www.w3.org/2005/Atom"}
+        entries = root.findall("{http://www.w3.org/2005/Atom}entry")
 
-        for entry in entries[:10]:
-            title = entry.findtext("title") or ""
-            link = entry.findtext("link") or ""
-            desc = entry.findtext("description") or ""
-            desc = re.sub(r"<[^>]+>", "", desc)
-            if len(desc) > 800:
-                desc = desc[:800] + "..."
-
+        for entry in entries:
+            title = entry.findtext("{http://www.w3.org/2005/Atom}title") or ""
             title = re.sub(r"\s+", " ", title).strip()
+            link_el = entry.find("{http://www.w3.org/2005/Atom}id")
+            link = link_el.text.strip() if link_el is not None else ""
+            summary = entry.findtext("{http://www.w3.org/2005/Atom}summary") or ""
+            summary = re.sub(r"\s+", " ", summary).strip()
+            if len(summary) > 800:
+                summary = summary[:800] + "..."
+
+            if link in seen:
+                continue
+            seen.add(link)
 
             items.append({
                 "source": "arxiv",
-                "category": category,
+                "category": cat,
                 "title": title,
-                "url": link.strip(),
-                "body": desc.strip(),
+                "url": link,
+                "body": summary,
             })
     return items
 
