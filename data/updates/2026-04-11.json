@@ -1,0 +1,106 @@
+{
+  "date": "2026-04-11",
+  "generated_at": "2026-04-11T09:10:00Z",
+  "items": [
+    {
+      "title": "エージェント時代の「どのAIを使うべきか」ガイド",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/a-guide-to-which-ai-to-use-in-the",
+      "summary": "Ethan Mollickが、AI選びは「チャットボットを選ぶ」時代から「モデル・アプリ・ハーネスの3層を理解する」時代に移行したと解説。同じモデルでもハーネス（自律実行の仕組み）が異なれば結果が大きく変わる。初心者はまず上位モデルを選ぶこと、経験者はClaude Codeなど専門ツールを試すことを推奨。",
+      "highlights": ["モデル・アプリ・ハーネスの3層で考える", "同じモデルでもハーネスで結果が変わる", "上位モデルを明示的に選ぶのが重要"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "マネジメント力がAI活用の最強スキルになる理由",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/management-as-ai-superpower",
+      "summary": "AIエージェントを使いこなす力は技術力ではなく「委任力」だとMollickが主張。PRD（製品要求仕様書）や軍事命令書のような既存の委任フレームワークが、そのままAIへの指示として有効に機能する。自分の専門分野で「良いアウトプットとは何か」を知っていることが、AIの出力を正しく評価し修正する力になる。",
+      "highlights": ["委任力 > 技術力", "PRDや設計書がそのままプロンプトになる", "専門分野の目利き力が重要"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "Claude Dispatchとインターフェースの力",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/claude-dispatch-and-the-power-of",
+      "summary": "AIの能力は十分でも、適切なインターフェースがなければ実用にならないという話。ツールの見せ方・使わせ方が結果を大きく左右する。能力の問題ではなくアクセスポイントの問題であることが多い。",
+      "highlights": ["AI能力 ≠ ユーザー体験", "インターフェース設計が成果を決める"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "ChatGPTの音声モードは実は弱いモデルで動いている",
+      "source": "rss",
+      "repo": "",
+      "feed": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Apr/10/voice-mode-is-weaker/#atom-everything",
+      "summary": "OpenAIの音声モードはGPT-4o時代の古いモデルで動いており、知識カットオフは2024年4月。「話せるAI=最も賢いAI」と思いがちだが実際は逆。Andrej Karpathyも指摘する通り、使うインターフェースによってAIの能力認識に大きな格差が生まれている。",
+      "highlights": ["音声モード = 旧世代モデル", "アクセス方法で能力認識が変わる"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "Claude Code v2.1.101: チーム向けオンボーディング機能追加",
+      "source": "github-release",
+      "repo": "anthropics/claude-code",
+      "feed": "",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.101",
+      "summary": "チームメンバーの立ち上げガイドを自動生成する/team-onboardingコマンドを追加。企業TLSプロキシ対応のOS CA証明書ストア信頼がデフォルトに。レート制限エラーがどの制限に当たったか表示されるように改善。",
+      "highlights": ["/team-onboardingでチーム導入が楽に", "企業環境でのTLS対応がデフォルト化", "レート制限表示の改善"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "Metaの新モデル「Muse Spark」登場、Opus 4.6やGemini 3.1 Proと競合",
+      "source": "rss",
+      "repo": "",
+      "feed": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Apr/8/muse-spark/#atom-everything",
+      "summary": "MetaがLlama 4以来約1年ぶりの新モデルを発表。オープンウェイトではなくホスト型で、現在は招待制API。ベンチマークではOpus 4.6やGPT 5.4と競合するがTerminal-Bench 2.0では後れを取る。meta.aiで試用可能（要Facebook/Instagramログイン）。",
+      "highlights": ["Metaがホスト型モデルに方向転換", "Terminal-Bench 2.0では競合に劣後"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "macOSのプライバシー設定は信用できない",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://eclecticlight.co/2026/04/10/why-you-cant-trust-privacy-security/",
+      "summary": "macOSの「プライバシーとセキュリティ」設定画面の表示が、実際のシステム状態と一致しないケースがあるという調査。設定をオフにしたつもりでも有効なまま、あるいはその逆が起きうる。HNで460ポイント、158コメントと大きな反響。",
+      "highlights": ["設定UIと実際の挙動が乖離する場合がある", "Mac利用者は確認を"],
+      "category": "web-dev"
+    },
+    {
+      "title": "LinuxカーネルへのAI支援利用ガイドラインが公式化",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://github.com/torvalds/linux/blob/master/Documentation/process/coding-assistants.rst",
+      "summary": "Linuxカーネルの公式ドキュメントにAIコーディングアシスタントの利用方針が追加。AI生成コードの品質責任は投稿者にあること、ライセンス上の注意点などが明記されている。HNで318ポイント、215コメントの大議論に。",
+      "highlights": ["AI生成コードの責任は人間の投稿者に帰属", "Linuxカーネルが公式にAI利用方針を策定"],
+      "category": "research"
+    },
+    {
+      "title": "Deno v2.7.12: Node.js互換性を大幅強化",
+      "source": "github-release",
+      "repo": "denoland/deno",
+      "feed": "",
+      "url": "https://github.com/denoland/deno/releases/tag/v2.7.12",
+      "summary": "llhttpベースのHTTPParserをネイティブ実装、TLSWrapのRust化、fs.SyncWriteStream追加など、Node.js互換層を大幅に強化。ファイルディスクリプタの扱いが改善され、child_processのstdio配列で数値FDをサポート。",
+      "highlights": ["Node.js互換のHTTPParserをネイティブ化", "Rust実装のTLSWrapで性能向上"],
+      "category": "runtime"
+    },
+    {
+      "title": "GitHubのdiff表示パフォーマンスを改善した話",
+      "source": "rss",
+      "repo": "",
+      "feed": "GitHub Blog",
+      "url": "https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/",
+      "summary": "GitHubのdiff行表示のパフォーマンス改善について。複雑な最適化ではなく、シンプルにすることで性能が上がったという話。実装の詳細と、パフォーマンス改善の考え方が参考になる。",
+      "highlights": ["シンプルさがパフォーマンスにつながる", "diff表示の具体的な最適化手法"],
+      "category": "web-dev"
+    }
+  ]
+}
