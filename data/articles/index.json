@@ -1,1 +1,9 @@
-{"articles": []}
+{"articles": [
+  {
+    "slug": "ai-cognitive-accommodation",
+    "title": "AIの弱点は発達障害と構造的に同じ — CLAUDE.mdは「合理的配慮」である",
+    "date": "2026-04-11",
+    "tags": ["ai-tips", "cognitive"],
+    "summary": "AIの完了バイアスや文脈の読み落としは、ADHD/ASDの認知特性と同じ構造を持つ。対策も同じ — 構造化と環境調整。"
+  }
+]}
