@@ -1,0 +1,106 @@
+{
+  "date": "2026-04-13",
+  "generated_at": "2026-04-12T22:30:00Z",
+  "items": [
+    {
+      "title": "Claude Code v2.1.101: /team-onboarding・OS CA証明書・rate-limit表示改善",
+      "source": "github-release",
+      "repo": "anthropics/claude-code",
+      "feed": "",
+      "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.101",
+      "summary": "チームメンバーの立ち上げガイドを自動生成する /team-onboarding コマンドを追加。企業TLSプロキシが追加設定不要で動くようにOS CA証明書ストアをデフォルト信頼。/ultraplanなどリモートセッション機能がWebセットアップ不要で自動起動。rate-limitエラーがどの制限に当たったか・いつリセットされるかを具体的に表示するよう改善。",
+      "highlights": ["/team-onboardingでチーム展開が楽に", "企業プロキシ環境での追加設定が不要に", "rate-limit情報が具体的に表示されるように"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "Anthropicが3月6日からキャッシュTTLを静かに短縮していた",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://github.com/anthropics/claude-code/issues/46829",
+      "summary": "Anthropicが3月6日にプロンプトキャッシュのTTL（有効期限）を事前アナウンスなく短縮。キャッシュが切れやすくなったためAPIコストが増加したユーザーが続出。特に長いシステムプロンプトを使うヘビーユーザーへの影響が大きい。HN 338ポイント・247コメント。",
+      "highlights": ["事前告知なしのTTL短縮", "APIコスト増加の原因に", "HN 338pt・247コメントの注目度"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "ChatGPTの音声モードは「古くて弱いモデル」を使っている",
+      "source": "rss",
+      "repo": "",
+      "feed": "Simon Willison",
+      "url": "https://simonwillison.net/2026/Apr/10/voice-mode-is-weaker/#atom-everything",
+      "summary": "ChatGPTの音声モードは実際にはGPT-4o時代の古いモデルで動いており、知識カットオフは2024年4月。音声で話しかけると「最先端AIと会話している」気がするが実態はかけ離れている。インターフェースがモデル性能の認識を大きく歪める典型例。Karpathyのツイートを受けてSimon Willisonが指摘。",
+      "highlights": ["音声モードのカットオフは2024年4月", "インターフェースが能力認識を歪める", "「賢そうに見える」≠「賢い」"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "Claude Codeと、そのあとに来るもの",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/claude-code-and-what-comes-next",
+      "summary": "Ethan Mollickが適切なツールがあればAIが驚くほどの成果を出せることをClaude Codeを例に論じる。単なるチャットとエージェント的ツールでは体験が根本的に異なり、ツール選択がAI活用の成否を大きく左右する。",
+      "highlights": ["ツール設計がAI成果を決定する", "チャットとエージェントの体験の断絶"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "今のAIの「形」と次に来るもの",
+      "source": "rss",
+      "repo": "",
+      "feed": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/p/the-shape-of-the-thing",
+      "summary": "Ethan Mollickによる現在のAI状況の総括と今後の展望。単なる技術予測ではなく、AI能力の「形」——どこが得意でどこが苦手か——を理解することが実用的なAI活用の前提になるという視点で整理。",
+      "highlights": ["AI能力の「形」を理解する視点", "現状の整理と今後の見通し"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "エージェントファーストでプロセスを再設計するとはどういうことか",
+      "source": "rss",
+      "repo": "",
+      "feed": "MIT Tech Review AI",
+      "url": "https://www.technologyreview.com/2026/04/07/1134966/enabling-agent-first-process-redesign/",
+      "summary": "AIエージェントは既存ワークフローに追加するのではなく、プロセスをエージェント中心に再設計することで真価を発揮する。静的なルールベースとは異なり、データ・システム・人間と連携しながら動的に最適化できる。「ボルトオン」ではなく「ゼロから設計」が鍵。",
+      "highlights": ["エージェントをボルトオンしない", "プロセスをゼロから再設計する発想", "動的最適化が従来システムとの差"],
+      "category": "ai-tips"
+    },
+    {
+      "title": "OpenAIがChatGPTから「勉強モード」を静かに削除",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://news.ycombinator.com/item?id=47739305",
+      "summary": "OpenAIが告知なしにChatGPTの「Study Mode（勉強モード）」を削除。ソクラテス式問答でユーザーに考えさせる学習支援機能だった。直接答えを渡すモードへの集中を示唆する動きとして注目。HN 146ポイント・54コメント。",
+      "highlights": ["勉強支援機能の静かな削除", "「考えさせる」より「答える」への傾斜？", "HN 146pt・54コメント"],
+      "category": "ai-tools"
+    },
+    {
+      "title": "スペインでDockerのpullができない — CloudflareブロックがDockerを巻き込む",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://news.ycombinator.com/item?id=47738883",
+      "summary": "スペインのISPがサッカー著作権保護のためCloudflare IPをブロックした結果、Docker Hubにアクセスできなくなる副作用が発生。広範なIPブロックが開発インフラを巻き込む事例として話題に。HN 370ポイント・162コメント。",
+      "highlights": ["著作権保護ブロックが開発インフラに波及", "Cloudflare IP範囲の広さが仇に", "HN 370pt・162コメント"],
+      "category": "web-dev"
+    },
+    {
+      "title": "家でヒューマノイドロボットを訓練するギグワーカーたち",
+      "source": "rss",
+      "repo": "",
+      "feed": "MIT Tech Review AI",
+      "url": "https://www.technologyreview.com/2026/04/01/1134863/humanoid-data-training-gig-economy-2026-breakthrough-technology/",
+      "summary": "ナイジェリアの医学生がリングライトとiPhoneをおでこに装着してロボット訓練データを収集。ヒューマノイドロボットの学習には人間の動作データが必要で、そのデータ収集がギグエコノミー化している。AIの「知性」を支える人間労働の新形態。",
+      "highlights": ["ロボット訓練データのギグエコノミー化", "AIの裏側にある人間労働", "2026年ブレークスルーテクノロジー選出"],
+      "category": "research"
+    },
+    {
+      "title": "Cirrus LabsがOpenAIに参加",
+      "source": "hackernews",
+      "repo": "",
+      "feed": "",
+      "url": "https://cirruslabs.org/",
+      "summary": "CI/CDインフラを提供するCirrus LabsがOpenAIへの参加を発表。macOS・Linux・Windows対応のCI基盤を持つ会社。OpenAIがソフトウェア開発インフラ領域の技術を取り込む動き。HN 275ポイント・139コメント。",
+      "highlights": ["CI/CDインフラ企業をOpenAIが獲得", "開発ツールチェーンへの投資拡大", "HN 275pt・139コメント"],
+      "category": "ai-tools"
+    }
+  ]
+}
