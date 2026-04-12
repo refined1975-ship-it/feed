@@ -1,7 +1,14 @@
 {"articles": [
   {
+    "slug": "error-handling-redesign",
+    "title": "自己肯定感を工学する",
+    "date": "2026-04-12",
+    "tags": ["engineering", "cognitive"],
+    "summary": "「自己肯定感」の正体は、エラー重大度の分類設定である。全エラーをFATALにマップするシステムの脆弱性と、その再設計を工学的に記述する"
+  },
+  {
     "slug": "procrastination-vram",
-    "title": "先送りはバグではなくシステム防衛である",
+    "title": "先送りを工学する",
     "date": "2026-04-12",
     "tags": ["engineering", "cognitive"],
     "summary": "先送りを「意志力の欠如」ではなく、VRAMオーバーフローとデッドロックとして工学的に再記述する"
