@@ -14,6 +14,13 @@
     "summary": "先送りを「意志力の欠如」ではなく、VRAMオーバーフローとデッドロックとして工学的に再記述する"
   },
   {
+    "slug": "implicit-protocol",
+    "title": "空気を読めないを工学する",
+    "date": "2026-04-12",
+    "tags": ["engineering", "cognitive"],
+    "summary": "「空気を読む」はキャッシュ参照O(1)の処理であり、非定型発達はそれを毎回リバースエンジニアリングしている。マスキングはプロトコルエミュレーションであり、疲弊はTDP超過である"
+  },
+  {
     "slug": "ai-cognitive-accommodation",
     "title": "AIの弱点は発達障害と構造的に同じ — CLAUDE.mdは「合理的配慮」である",
     "date": "2026-04-11",
