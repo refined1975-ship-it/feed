@@ -14,6 +14,13 @@
     "summary": "先送りを「意志力の欠如」ではなく、VRAMオーバーフローとデッドロックとして工学的に再記述する"
   },
   {
+    "slug": "effort-asymmetry",
+    "title": "努力を工学する",
+    "date": "2026-04-12",
+    "tags": ["engineering", "cognitive"],
+    "summary": "「努力」は道徳ではなく計算コストである。同じ出力に対するCPU消費量の非対称性と、それがなぜ外部から不可視なのかを記述する"
+  },
+  {
     "slug": "implicit-protocol",
     "title": "空気を読めないを工学する",
     "date": "2026-04-12",
